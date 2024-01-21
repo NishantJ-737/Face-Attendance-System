@@ -1,9 +1,10 @@
+# Made By Nishant Jangid
 import cv2
 import numpy as np
 import face_recognition
 import os
 from datetime import datetime
-
+print("Made By Nishant Jangid")
 path = 'ImagesAttendance'
 images = []
 classNames = []
