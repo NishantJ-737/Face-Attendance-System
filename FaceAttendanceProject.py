@@ -5,6 +5,8 @@ import face_recognition
 import os
 from datetime import datetime
 print("Made By Nishant Jangid")
+
+#Loading the Images From ImagesAttendance Directory
 path = 'ImagesAttendance'
 images = []
 classNames = []
@@ -16,6 +18,7 @@ for cl in myList:
     classNames.append(os.path.splitext(cl)[0])
 print(classNames)
 
+#Finding the Encoding of the Faces
 def findEncodings(images):
     encodeList =[]
     for img in images:
@@ -24,6 +27,7 @@ def findEncodings(images):
         encodeList.append(encode)
     return encodeList
 
+#Marking the Attendance in the Attendance.csv File
 def markAttendance(name):
     with open('Attendance.csv', 'r+') as f:
         myDataList = f.readlines()
@@ -40,8 +44,10 @@ def markAttendance(name):
 encodeListKnown = findEncodings(images)
 print('Encoding Complete')
 
+#Capturing the images of peope using webcam 
 cap = cv2.VideoCapture(0)
 
+#Comparing the Captured Images with the Images in the database or the ImagesAttendance Directory
 while True:
     success, img = cap.read()
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
