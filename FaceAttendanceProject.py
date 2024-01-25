@@ -78,7 +78,7 @@ while True:
             cv2.putText(img, name2 ,(x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
             print("Unkown")
     cv2.imshow('webcam', img)
-    if cv2.waitKey(10) == 13:
+    if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 cap.release()
 cv2.destroyAllWindow()
