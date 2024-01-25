@@ -4,7 +4,8 @@ import numpy as np
 import face_recognition
 import os
 from datetime import datetime
-print("Made By Nishant Jangid")
+print("-* Made By Nishant Jangid *-")
+print("-* Face Recognition Attendance System for School *-")
 
 #Loading the Images From ImagesAttendance Directory
 path = 'ImagesAttendance'
@@ -81,4 +82,4 @@ while True:
     if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 cap.release()
-cv2.destroyAllWindow()
+cv2.destroyAllWindows()
